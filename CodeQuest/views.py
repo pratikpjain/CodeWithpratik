@@ -18,8 +18,6 @@ def loginuser(request):
         if user is not None:
             login(request,user)
             return redirect("/")
-        else:
-            pass
     return render(request,'login.html')
 
 def logoutuser(request):
@@ -28,3 +26,12 @@ def logoutuser(request):
 
 def reset_password(request):
     return render(request,'reset_password.html')
+
+def putQuestion(request):
+    context = {
+        "question" : "Find the even number"
+    }
+    return render(request, 'question.html', context)
+
+
+
